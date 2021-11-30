@@ -8,7 +8,7 @@ const TotalCards = props => {
         className="caseTotalContainer redBg"
         testid="countryWideConfirmedCases"
       >
-        <p className="confirmedText red">Confirmed</p>
+        <p className="statusText red">Confirmed</p>
         <div>
           <img
             src="https://res.cloudinary.com/doxyss1uk/image/upload/v1638078828/Covid19/Group_osbfg7.png"
@@ -21,7 +21,7 @@ const TotalCards = props => {
         </p>
       </div>
       <div className="caseTotalContainer" testid="countryWideActiveCases">
-        <p className="confirmedText blue">Active</p>
+        <p className="statusText blue">Active</p>
         <div>
           <img
             src="https://res.cloudinary.com/doxyss1uk/image/upload/v1638095379/Covid19/protection_1_wf5cbe.png"
@@ -34,7 +34,7 @@ const TotalCards = props => {
         </p>
       </div>
       <div className="caseTotalContainer" testid="countryWideRecoveredCases">
-        <p className="confirmedText green">Recovered</p>
+        <p className="statusText green">Recovered</p>
         <div>
           <img
             src="https://res.cloudinary.com/doxyss1uk/image/upload/v1638096180/Covid19/recovered_1_v8p6oh.png"
@@ -47,7 +47,7 @@ const TotalCards = props => {
         </p>
       </div>
       <div className="caseTotalContainer" testid="countryWideDeceasedCases">
-        <p className="confirmedText gray">Deceased</p>
+        <p className="statusText gray">Deceased</p>
         <div>
           <img
             src="https://res.cloudinary.com/doxyss1uk/image/upload/v1638096179/Covid19/breathing_1_lgxazi.png"
