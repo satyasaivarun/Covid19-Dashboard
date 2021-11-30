@@ -1,0 +1,36 @@
+.stateListStyle {
+  display: flex;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+.stateName {
+  margin-left: 32px;
+  width: 200px;
+  color: #f1f5f9;
+}
+.listText {
+  text-align: right;
+}
+.redL {
+  color: #ff073a;
+  width: 160px;
+}
+.blueL {
+  color: #007bff;
+  width: 170px;
+}
+.greenL {
+  color: #28a745;
+  width: 200px;
+}
+.grayL {
+  color: #6c757d;
+  width: 180px;
+}
+.grayPopulation {
+  color: #6c757d;
+  width: 160px;
+}
