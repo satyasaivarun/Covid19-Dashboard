@@ -164,18 +164,49 @@ class HomeBody extends Component {
   state = {
     totalCases: {},
     apiStatus: 'INITIAL',
+    searchItems: [],
   }
 
   componentDidMount() {
     this.getApiData()
   }
 
-  searchForState = event => {
-    console.log(event.target.value)
-    const filteredStateList = statesList.filter(eachObject =>
-      event.target.value.includes(eachObject),
+  searchResult = () => {
+    const {searchItems} = this.state
+    return (
+      <ul className="unOrderSearchList">
+        {searchItems.map(eachResult => (
+          <li className="searchList">
+            <div className="listItemContainer">
+              <p className="stateNameTextSearch">{eachResult.state_name}</p>
+              <div className="stateCodeContainer">
+                <p className="stateCodeTextSearch">{eachResult.state_code}</p>
+                <img
+                  src="https://res.cloudinary.com/doxyss1uk/image/upload/v1638340415/Covid19/Line_z3jtfq.png"
+                  alt="stateCodeIcon"
+                  className="stateCodeIcon"
+                />
+              </div>
+            </div>
+            <hr className="hrLine" />
+          </li>
+        ))}
+      </ul>
     )
-    console.log(filteredStateList)
+  }
+
+  searchForState = event => {
+    const inputText = event.target.value
+    let filteredItems = []
+    if (inputText !== '') {
+      filteredItems = statesList.filter(eachObject =>
+        eachObject.state_code.toLowerCase().includes(inputText.toLowerCase()),
+      )
+      this.setState({searchItems: filteredItems})
+    } else {
+      filteredItems = []
+      this.setState({searchItems: filteredItems})
+    }
   }
 
   stateWiseCovidCaseList = () => {
@@ -212,13 +243,16 @@ class HomeBody extends Component {
     const {covidData, totalCases} = this.state
     return (
       <div className="mainContainer">
-        <div className="inputContainer">
-          <BiSearchAlt2 className="searchIcon" />
-          <input
-            className="homeInputStyle"
-            placeholder="Enter the State"
-            onChange={this.searchForState}
-          />
+        <div>
+          <div className="inputContainer">
+            <BiSearchAlt2 className="searchIcon" />
+            <input
+              className="homeInputStyle"
+              placeholder="Enter the State"
+              onChange={this.searchForState}
+            />
+          </div>
+          {this.searchResult()}
         </div>
         <TotalCards totalCases={totalCases} />
         {this.stateWiseCovidCaseList()}

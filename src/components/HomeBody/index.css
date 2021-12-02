@@ -35,12 +35,13 @@
 .homeInputStyle {
   width: 780px;
   height: 72px;
-  background: #2f2f43;
+  color: #64748b;
+  font-size: 16px;
+  background: transparent;
   border-radius: 8px;
   border: none;
   outline: none;
   font-size: 20px;
-  color: #ffffff;
 }
 ::placeholder {
   color: #94a3b8;
@@ -85,4 +86,45 @@
 }
 .population {
   margin-left: 87px;
+}
+.unOrderSearchList {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 5px;
+}
+.listItemContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
+}
+.stateNameTextSearch {
+  font-size: 16px;
+  color: #64748b;
+}
+.stateCodeContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px 6px;
+  background-color: #1cd4d429;
+  width: 79px;
+  height: 32px;
+}
+.stateCodeTextSearch {
+  color: #facc15;
+  font-size: 16px;
+  font-weight: 600;
+}
+.hrLine {
+  border: 0.3px solid #64748b;
+  margin: 0px;
+}
+.searchList:hover {
+  cursor: pointer;
+  border: 1px solid #94a3b8;
+  height: 64px;
+  background: #1f1f30;
 }
