@@ -7,7 +7,7 @@ const Header = () => (
       COVID19<span className="covidNavSpan">INDIA</span>
     </h1>
     <div className="headingLinkContainer">
-      <Link to="/home" className="linkHomeStyle">
+      <Link to="/" className="linkHomeStyle">
         Home
       </Link>
       <Link to="/about" className="linkAboutStyle">

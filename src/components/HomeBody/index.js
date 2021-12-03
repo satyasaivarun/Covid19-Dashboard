@@ -5,6 +5,7 @@ import {BiSearchAlt2} from 'react-icons/bi'
 import StateList from '../StateList'
 import TotalCards from '../TotalCards'
 import Footer from '../Footer'
+import SearchList from '../SearchList'
 
 const statesList = [
   {
@@ -176,20 +177,7 @@ class HomeBody extends Component {
     return (
       <ul className="unOrderSearchList">
         {searchItems.map(eachResult => (
-          <li className="searchList">
-            <div className="listItemContainer">
-              <p className="stateNameTextSearch">{eachResult.state_name}</p>
-              <div className="stateCodeContainer">
-                <p className="stateCodeTextSearch">{eachResult.state_code}</p>
-                <img
-                  src="https://res.cloudinary.com/doxyss1uk/image/upload/v1638340415/Covid19/Line_z3jtfq.png"
-                  alt="stateCodeIcon"
-                  className="stateCodeIcon"
-                />
-              </div>
-            </div>
-            <hr className="hrLine" />
-          </li>
+          <SearchList eachResult={eachResult} key={eachResult.state_code} />
         ))}
       </ul>
     )
@@ -240,7 +228,7 @@ class HomeBody extends Component {
   }
 
   renderCovidStateView = () => {
-    const {covidData, totalCases} = this.state
+    const {totalCases} = this.state
     return (
       <div className="mainContainer">
         <div>
@@ -314,8 +302,6 @@ class HomeBody extends Component {
   }
 
   render() {
-    const {covidData} = this.state
-
     return (
       <>
         <div className="HomeBgContainer">
